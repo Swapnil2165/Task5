@@ -168,62 +168,66 @@ const App = () => {
   };
 
   const renderHomePage = () => (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className='mt-4 border'>
       <Typography variant="h4" align="center" gutterBottom>
-        Leave Management
+        APPLAY LEAVE
       </Typography>
       {isRegistering ? (
         <>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="First Name"
-              value={firstName}
-              onChange={handleFirstNameChange}
+          <div class="form-group">
+            <label for="exampleInputPassword1">First Name</label>
+            <input type="text" 
+            class="form-control" 
+            id="exampleInputPassword1"
+            value={firstName}
+            onChange={handleFirstNameChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Last Name"
-              value={lastName}
-              onChange={handleLastNameChange}
+          </div>
+          <div class="form-group">
+          <label for="exampleInputLastname">Last Name</label>
+          <input type="text" 
+            class="form-control" 
+            id="exampleInputLastname"
+            value={lastName}
+            onChange={handleLastNameChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Email"
-              value={email}
-              onChange={handleEmailChange}
+          </div>
+          <div class="form-group">
+          <label for="exampleInputemail">Email</label>
+          <input type="Email" 
+            class="form-control" 
+            id="exampleInputemail"
+            value={email}
+            onChange={handleEmailChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Contact Number"
-              value={contactNumber}
+          </div>
+          <div class="form-group">
+          <label for="exampleInputContact">Contact Number</label>
+          <input type="text" 
+            class="form-control" 
+            id="exampleInputcontact"
+            value={contactNumber}
               onChange={handleContactNumberChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <InputLabel>Department</InputLabel>
-            <Select value={department} onChange={handleDepartmentChange}>
-              <MenuItem value="Department 1">Department 1</MenuItem>
-              <MenuItem value="Department 2">Department 2</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Username"
-              value={username}
-              onChange={handleUsernameChange}
+          </div>
+          <div class="form-group">
+          <label for="exampleInputuserName">User Name</label>
+          <input type="Text" 
+            class="form-control" 
+            id="exampleInputcontact"
+            value={username}
+            onChange={handleUsernameChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Password"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
+          </div>
+          <div class="form-group">
+          <label for="exampleInputpassword">Password</label>
+          <input type="password" 
+            class="form-control" 
+            id="exampleInputpassword"
+            value={password}
+            onChange={handlePasswordChange}
             />
-          </FormControl>
+          </div>
           <Button
             variant="contained"
             color="primary"
@@ -231,43 +235,48 @@ const App = () => {
             onClick={handleSignup}
             sx={{ marginBottom: 2 }}
           >
-            Register
+            SIGN UP
           </Button>
           <Typography align="center">
-            Already registered :{' '}
-            <Button
-              color="secondary"
-              onClick={() => setIsRegistering(false)}
-              sx={{ textTransform: 'none' }}
-            >
-              Login
-            </Button>
+            {/* Already registered :{' '} */}
+             <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+             onClick={() => setIsRegistering(false)}
+            sx={{ marginBottom: 2 }}
+          >
+            LOG IN
+          </Button>
           </Typography>
         </>
       ) : (
         <>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Username"
-              value={username}
-              onChange={handleUsernameChange}
+        <div class="form-group">
+            <label for="exampleInputusername1">User Name</label>
+            <input type="text" 
+            class="form-control" 
+            id="exampleInputusername1"
+            value={username}
+             onChange={handleUsernameChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <TextField
-              label="Password"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputpassword1">Password</label>
+            <input type="password" 
+            class="form-control" 
+            id="exampleInputpassword1"
+            value={password}
+            onChange={handlePasswordChange}
             />
-          </FormControl>
-          <FormControl fullWidth sx={{ marginBottom: 2 }}>
-            <InputLabel>Role</InputLabel>
-            <Select value={role} onChange={handleRoleChange}>
+          </div>
+          <div class="form-group">
+          <InputLabel for="inputType1">Deparment</InputLabel>
+          <Select value={role} onChange={handleRoleChange}>
               <MenuItem value="HOD">HOD</MenuItem>
               <MenuItem value="Staff">Staff</MenuItem>
             </Select>
-          </FormControl>
+          </div>  
           <Button
             variant="contained"
             color="primary"
@@ -277,16 +286,15 @@ const App = () => {
           >
             Login
           </Button>
-          <Typography align="center">
-            If not registered already :{' '}
-            <Button
-              color="secondary"
-              onClick={() => setIsRegistering(true)}
-              sx={{ textTransform: 'none' }}
-            >
-              Register Now
-            </Button>
-          </Typography>
+         <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            onClick={() => setIsRegistering(true)}
+            sx={{ marginBottom: 2 }}
+          >
+            SING 
+          </Button>
         </>
       )}
     </Container>
@@ -328,6 +336,7 @@ const App = () => {
                 Approve
               </Button>
               <Button
+                className='ml-4'
                 variant="contained"
                 color="secondary"
                 onClick={() => handleRejectLeave(application.id)}
