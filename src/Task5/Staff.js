@@ -293,7 +293,7 @@ const App = () => {
             onClick={() => setIsRegistering(true)}
             sx={{ marginBottom: 2 }}
           >
-            SING 
+            SING UP
           </Button>
         </>
       )}
