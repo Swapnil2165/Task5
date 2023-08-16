@@ -170,7 +170,6 @@ const App = () => {
   const renderHomePage = () => (
     <Container maxWidth="sm" className='mt-4 border'>
       <Typography variant="h4" align="center" gutterBottom>
-        APPLAY LEAVE
       </Typography>
       {isRegistering ? (
         <>
