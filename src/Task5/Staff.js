@@ -173,6 +173,13 @@ const App = () => {
       </Typography>
       {isRegistering ? (
         <>
+        <div class="form-group">
+          <InputLabel for="inputType1">Deparment</InputLabel>
+          <Select value={role} onChange={handleRoleChange}>
+              <MenuItem value="HOD">HOD</MenuItem>
+              <MenuItem value="Staff">Staff</MenuItem>
+            </Select>
+          </div>  
           <div class="form-group">
             <label for="exampleInputPassword1">First Name</label>
             <input type="text" 
@@ -234,7 +241,7 @@ const App = () => {
             onClick={handleSignup}
             sx={{ marginBottom: 2 }}
           >
-            SIGN UP
+           Ragister
           </Button>
           <Typography align="center">
             {/* Already registered :{' '} */}
@@ -269,13 +276,7 @@ const App = () => {
             onChange={handlePasswordChange}
             />
           </div>
-          <div class="form-group">
-          <InputLabel for="inputType1">Deparment</InputLabel>
-          <Select value={role} onChange={handleRoleChange}>
-              <MenuItem value="HOD">HOD</MenuItem>
-              <MenuItem value="Staff">Staff</MenuItem>
-            </Select>
-          </div>  
+         
           <Button
             variant="contained"
             color="primary"
@@ -292,7 +293,7 @@ const App = () => {
             onClick={() => setIsRegistering(true)}
             sx={{ marginBottom: 2 }}
           >
-            SING UP
+            Ragister Now
           </Button>
         </>
       )}
@@ -301,7 +302,7 @@ const App = () => {
   
 
   const renderHodDashboard = () => (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className='border'>
       <Typography variant="h4" align="center" gutterBottom>
         HOD Dashboard
       </Typography>
@@ -359,7 +360,7 @@ const App = () => {
 
 
   const renderStaffDashboard = () => (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className='border'>
       <Typography variant="h4" align="center" gutterBottom>
         Staff Dashboard
       </Typography>
